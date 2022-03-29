@@ -1,12 +1,11 @@
-import { shallowMount } from '@vue/test-utils'
-import HelloWorld from '@/components/HelloWorld.vue'
+import { shallowMount } from '@vue/test-utils';
+import {ProductForm} from '@/views/product-form.vue'
 
-describe('HelloWorld.vue', () => {
-  it('renders props.msg when passed', () => {
-    const msg = 'new message'
-    const wrapper = shallowMount(HelloWorld, {
-      props: { msg }
-    })
-    expect(wrapper.text()).toMatch(msg)
+const wrapper = shallowMount(ProductForm)
+
+describe('ProductForm.vue', () => {
+  it('contains a add button ', () => {
+   
+    expect(wrapper.contains('button')).tobe(true)
   })
 })

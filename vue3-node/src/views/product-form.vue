@@ -5,7 +5,7 @@
 
   <el-dialog v-model:visible="dialogFormVisible">
     <template v-slot:default>
-      <el-form :model="form">
+      <el-form :model="form" >
         <el-form-item label="Name">
           <el-input v-model="form.name" autocomplete="off"></el-input>
         </el-form-item>
@@ -22,7 +22,7 @@
     </template>
   </el-dialog>
   <el-table :data="tableData" style="width: 100%" border>
-    <el-table-column label="Name" prop="name"> </el-table-column>
+    <el-table-column label="Name" prop="name" > </el-table-column>
     <el-table-column label="Stock" prop="stock"> </el-table-column>
     <el-table-column align="center">
       <template v-slot:header="scope">
@@ -101,6 +101,14 @@ export default {
     },
 
     handleData(data) {
+      if(!data.name||data.stock){
+        alert('please input name or stock!')
+        return;
+      }else if(typeof data.stock != number) {
+        alert('stock must be number!')
+        return;
+      }
+     
       handleData(data)
         .then((res) => {
           this.getList();
