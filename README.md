@@ -15,8 +15,11 @@
  ## database mysql
  
  ******at the root project dir you can try
- `docker-compose up ` 
- ### if failed you can try 1 if you have docker or you can use your local mysql
+ `docker-compose up `  :face_in_clouds: if failed don't worry we can use normal command 
+ 
+ 
+ 
+ ## use below command to create mysql in docker  or you can use your local mysql
  
  1. first create mysql image if you have docker
   - (this command for mac m1 which i use to create mysql image )
