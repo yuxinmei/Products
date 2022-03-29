@@ -12,10 +12,10 @@
  
 `npm install` or `yarn`
  
- ### database mysql
+ ## database mysql
  
- at the root project dir you can try
- `docker-compose up `
+ ******at the root project dir you can try
+ `docker-compose up ` 
  ### if failed you can try 1 if you have docker or you can use your local mysql
  
  1. first create mysql image if you have docker
