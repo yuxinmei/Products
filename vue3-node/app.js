@@ -1,12 +1,8 @@
-const Koa = require("koa");
-const cors = require("koa2-cors");
-const Router = require("./routers/index");
-const bodyParser = require("koa-bodyparser");
+const app = require('./server/app');
+// require('./server/app/database');
 
-const app = new Koa();
-app.use(cors());
+const config = require('./server/app/config');
 
-app.use(bodyParser());
-
-app.use(Router.routes(), Router.allowedMethods());
-app.listen(3001);
+app.listen(config.APP_PORT, () => {
+    console.log(`server is on ${config.APP_PORT}`);
+  });

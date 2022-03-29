@@ -1,11 +1,8 @@
-// src/api/api.js
-// import axios from "axios";
 import request from "./index";
 
-// axios.defaults.baseURL = "http://localhost:3001";
 export function getDatas() {
   return request({
-    url: "/api/productss",
+    url: "/api/products",
     method: "get",
   });
 }
@@ -31,11 +28,10 @@ export function handleData(params) {
   }
 }
 
-export function searchData(params) {
+export function searchData(name) {
   return request({
-    url: "/api/products",
+    url: "/api/products/search/"+ name,
     method: "get",
-    params,
   });
 }
 

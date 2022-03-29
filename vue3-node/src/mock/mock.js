@@ -34,7 +34,7 @@ Mock.mock(url + "/api/products", "get", (req, res) => {
   };
 });
 
-Mock.mock(url + "/api/productss", "get", (req, res) => {
+Mock.mock(url + "/api/products", "get", (req, res) => {
   return {
     status: 200,
     message: "get list success",
@@ -43,7 +43,7 @@ Mock.mock(url + "/api/productss", "get", (req, res) => {
 });
 
 //todo
-Mock.mock(url + "/api/productss", "put", (req, res) => {
+Mock.mock(url + "/api/products", "put", (req, res) => {
   return {
     status: 200,
     message: "update success",

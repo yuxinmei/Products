@@ -35,7 +35,7 @@
         <el-button
           size="small"
           style="margin-left: 10px"
-          @click="searchData(searchValue)"
+          @click="search(searchValue)"
           >search</el-button
         >
       </template>
@@ -60,7 +60,7 @@ export default {
   created() {
     getDatas()
       .then((res) => {
-        Object.assign(this.tableData, res.data.data);
+       this.tableData=res.data;
       })
       .catch((err) => {});
   },
@@ -73,12 +73,24 @@ export default {
     };
   },
   methods: {
+    getList(){
+      getDatas()
+      .then((res) => {
+       this.tableData=res.data;
+      })
+      .catch((err) => {});
+    },
     search(name) {
-      searchData(name)
+      if(!name){
+      this.getList();
+      }else{
+        searchData(name)
         .then((res) => {
-          this.tableData= res.data.data;
+          this.tableData= res.data;
         })
         .catch((err) => {});
+      }
+      
     },
     openDialog(index, row) {
       if (index == null) {
@@ -91,26 +103,18 @@ export default {
     handleData(data) {
       handleData(data)
         .then((res) => {
-          this.tableData= res.data.data;
+          this.getList();
           this.dialogFormVisible = false;
         })
         .catch((err) => {
           console.log(err);
         });
     },
-    searchData(data) {
-      searchData(data)
-        .then((res) => {
-          this.tableData= res.data.data;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
+  
     handleDelete( row) {
       deleteData(row.id)
         .then((res) => {
-          this.tableData= res.data.data;
+          this.getList();
         })
         .catch((err) => {
           console.log(err);
