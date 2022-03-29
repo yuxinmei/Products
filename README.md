@@ -20,9 +20,13 @@
  
  1. first create mysql image if you have docker
   - (this command for mac m1 which i use to create mysql image )
+
+
 ` docker run --name=mysql -d  -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 mysql/mysql-server `
  
   - (this command for normal use to create mysql image )
+
+
 `docker run -itd --name mysql-test -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql `
  
  
