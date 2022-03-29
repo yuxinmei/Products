@@ -5,7 +5,7 @@ import request from "./index";
 // axios.defaults.baseURL = "http://localhost:3001";
 export function getDatas() {
   return request({
-    url: "/api/datas",
+    url: "/api/productss",
     method: "get",
   });
 }
@@ -18,22 +18,22 @@ export function handleData(params) {
   };
   if (params.id == null) {
     return request({
-      url: "/api/data",
+      url: "/api/products",
       method: "post",
       data,
     });
   } else {
     return request({
-      url: "/api/data/" + params.id,
+      url: "/api/products/" + params.id,
       method: "put",
-      params: data,
+      data,
     });
   }
 }
 
 export function searchData(params) {
   return request({
-    url: "/api/data",
+    url: "/api/products",
     method: "get",
     params,
   });
@@ -41,7 +41,7 @@ export function searchData(params) {
 
 export function deleteData(id) {
   return request({
-    url: "/api/data/" + id,
+    url: "/api/products/" + id,
     method: "delete",
     id: id,
   });

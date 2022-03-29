@@ -46,7 +46,7 @@
         <el-button
           size="mini"
           type="danger"
-          @click="handleDelete(scope.$index, scope.row)"
+          @click="handleDelete( scope.row)"
           >Delete</el-button
         >
       </template>
@@ -74,7 +74,11 @@ export default {
   },
   methods: {
     search(name) {
-      console.log(name);
+      searchData(name)
+        .then((res) => {
+          this.tableData= res.data.data;
+        })
+        .catch((err) => {});
     },
     openDialog(index, row) {
       if (index == null) {
@@ -87,7 +91,7 @@ export default {
     handleData(data) {
       handleData(data)
         .then((res) => {
-          getDatas();
+          this.tableData= res.data.data;
           this.dialogFormVisible = false;
         })
         .catch((err) => {
@@ -97,16 +101,16 @@ export default {
     searchData(data) {
       searchData(data)
         .then((res) => {
-          Object.assign(this.tableData, res.data.data);
+          this.tableData= res.data.data;
         })
         .catch((err) => {
           console.log(err);
         });
     },
-    handleDelete(index, row) {
+    handleDelete( row) {
       deleteData(row.id)
         .then((res) => {
-          getDatas();
+          this.tableData= res.data.data;
         })
         .catch((err) => {
           console.log(err);
