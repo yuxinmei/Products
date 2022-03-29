@@ -2,7 +2,8 @@ import axios from "axios";
 import { ElMessage } from "element-plus";
 
 const service = axios.create({
-  baseURL: import.meta.env.VITE_BASE_API, 
+  // baseURL: import.meta.env.VITE_BASE_API, 
+  baseURL: 'http://localhost:3001', 
   timeout: 50000, 
   headers: {
     "Content-Type": "application/json",

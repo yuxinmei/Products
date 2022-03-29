@@ -13,6 +13,7 @@
   },
   "main": "vite.config.js",
   "dependencies": {
+    "@babel/preset-env": "^7.16.11",
     "axios": "^0.26.1",
     "dotenv": "^16.0.0",
     "element-plus": "^2.1.7",
