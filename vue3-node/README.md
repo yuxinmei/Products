@@ -10,7 +10,11 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 `` npm run dev / yarn dev 
 
-``node app.js 
+### frontend
+`npm run dev` or `yarn dev`
+
+### backend
+`node app.js`
 
 ## for test e2e 
 yarn run test:e2e
