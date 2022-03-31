@@ -1,6 +1,6 @@
 <template>
   <el-button type="primary" class="add-button" @click="openDialog(null, null)"
-    >add</el-button
+    >Add</el-button
   >
 
   <el-dialog v-model:visible="dialogFormVisible">

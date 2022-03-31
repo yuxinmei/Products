@@ -7,7 +7,7 @@
   "scripts": {
     "build": "vite build ",
     "test:unit": "jest",
-    "test:e2e": "cypress on",
+    "test:e2e": "cypress run",
     "dev": "vite",
     "preview": "vite preview"
   },
@@ -15,6 +15,7 @@
   "dependencies": {
     "@babel/preset-env": "^7.16.11",
     "axios": "^0.26.1",
+    "cypress": "^9.5.3",
     "dotenv": "^16.0.0",
     "element-plus": "^2.1.7",
     "element3": "0.0.40",
