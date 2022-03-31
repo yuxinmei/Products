@@ -42,10 +42,12 @@
  [PROJECT DDL(create database,table and sample data)](https://github.com/yuxinmei/Products/blob/main/vue3-node/server/sql/products.sql)
  
 
- After that, create a `.env` file and set the database username & password:
+ After that, create a `.env` file and set the database username & password and 
+ :crayon::crayon::crayon::crayon:**for proxy use VITE_BASE_API**:
 
 ```env
 
+VITE_BASE_API=http://localhost:3001
 APP_PORT=3001
 MYSQL_HOST=localhost
 MYSQL_PORT=3306
